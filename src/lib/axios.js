@@ -7,9 +7,9 @@ const isLocalHost = typeof window !== 'undefined' && (
   /^10\./.test(window.location.hostname)
 );
 
-const API_BASE_URL = isLocalHost 
-  ? `http://${window.location.hostname}:5001` 
-  : '';
+const API_BASE_URL = isLocalHost
+  ? `http://${window.location.hostname}:5001`
+  : (process.env.REACT_APP_API_URL || '');
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
