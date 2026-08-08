@@ -7,9 +7,13 @@ const isLocalHost = typeof window !== 'undefined' && (
   /^10\./.test(window.location.hostname)
 );
 
+// In production, same-origin requests hit the /api rewrite in vercel.json,
+// which proxies to the backend deployment. REACT_APP_API_URL only overrides
+// this when it is an https URL, so a stale http:// value can't break the app.
+const envApiUrl = (process.env.REACT_APP_API_URL || '').trim();
 const API_BASE_URL = isLocalHost
   ? `http://${window.location.hostname}:5001`
-  : (process.env.REACT_APP_API_URL || '');
+  : (envApiUrl.startsWith('https://') ? envApiUrl.replace(/\/$/, '') : '');
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
