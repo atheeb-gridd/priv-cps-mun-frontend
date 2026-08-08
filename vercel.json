@@ -1,18 +1,12 @@
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/public",
-      "config": {
-        "distDir": "public"
-      }
-    }
-  ],
-  "routes": [
+      "source": "/api/:path*",
+      "destination": "https://priv-cps-mun-backend.vercel.app/api/:path*"
+    },
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
