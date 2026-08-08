@@ -53,7 +53,7 @@ const Login = () => {
         navigate('/registration-form');
       }
     } catch (err) {
-      setError(err);
+      setError(typeof err === 'string' ? err : (err?.message || 'Login failed. Please try again.'));
     } finally {
       setLoading(false);
     }
