@@ -17,6 +17,7 @@ const API_BASE_URL = isLocalHost
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
+  timeout: 15000, // 15s — prevents indefinite hangs during Vercel cold starts
   headers: {
     'Content-Type': 'application/json',
   },
@@ -40,6 +41,9 @@ apiClient.interceptors.request.use(
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
+    // Only clear session and redirect on a definitive 401 from the server.
+    // Do NOT logout on network errors (error.response is undefined),
+    // timeouts, or 5xx server errors — these are transient (Vercel cold starts, etc.)
     if (error.response?.status === 401) {
       localStorage.removeItem('accessToken');
       localStorage.removeItem('refreshToken');
@@ -49,6 +53,7 @@ apiClient.interceptors.response.use(
     } else if (error.response?.status === 403) {
       console.warn('Access forbidden (403):', error.config?.url);
     }
+    // For network errors / timeouts / 5xx: just reject so the caller can handle it gracefully
     return Promise.reject(error);
   }
 );
