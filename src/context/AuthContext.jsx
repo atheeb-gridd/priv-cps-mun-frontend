@@ -45,11 +45,20 @@ export const AuthProvider = ({ children }) => {
       const { data } = await apiClient.get('/auth/me');
       setUser(data.user);
     } catch (error) {
-      console.error('Session restore failed:', error);
-      clearUserLocalSession();
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('refreshToken');
-      setUser(null);
+      // Only clear session if the server explicitly rejected the token (401).
+      // Transient errors (network timeout, Vercel cold-start 5xx) should NOT
+      // log the user out — the token may still be perfectly valid.
+      if (error.response?.status === 401) {
+        console.warn('Session invalid (401), clearing local session.');
+        clearUserLocalSession();
+        localStorage.removeItem('accessToken');
+        localStorage.removeItem('refreshToken');
+        setUser(null);
+      } else {
+        console.warn('Session check failed transiently, keeping session:', error.message);
+        // Keep the user's local state intact — they are still "logged in" locally
+        // and the next API call will re-validate if needed.
+      }
     } finally {
       setLoading(false);
     }
