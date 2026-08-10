@@ -21,70 +21,70 @@ const Agendas = () => {
       shortName: 'UNSC',
       logo: UnscGold,
       bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Deliberation on the Red Sea Crisis: Ensuring Maritime Security and Regional Stability'
+      agenda: 'Protection of International Shipping in the Red Sea'
     },
     {
       name: 'UN Human Rights Council',
       shortName: 'UNHRC',
       logo: UnhrcGold,
       bg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Addressing Human Rights Violations in Conflict Zones with Special Emphasis on Myanmar'
+      agenda: 'Addressing the Rohingya Refugee Crisis with Special Emphasis on Accountability, Safe Repatriation, and the Protection of Human Rights'
     },
     {
       name: 'UN General Assembly',
       shortName: 'UNGA',
       logo: UngaGold,
       bg: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Strengthening Global Cooperation for Sustainable Development and International Peace'
+      agenda: 'Reforming International Sanctions while Preventing the Misuse of Unilateral Coercive Measures'
     },
     {
       name: 'Economic and Social Council',
       shortName: 'ECOSOC',
       logo: EcosocGold,
       bg: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Bridging the Global Digital Divide for Inclusive Economic and Social Development'
+      agenda: 'Promoting the Responsible Development and Use of Artificial Intelligence for Sustainable Economic and Social Development'
     },
     {
       name: 'International Labour Organization',
       shortName: 'ILO',
       logo: IloGold,
       bg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400',
-      agenda: "Ensuring Decent Work and Protecting Workers' Rights in the Age of Artificial Intelligence"
+      agenda: "Addressing the Future of Work with Special Emphasis on Automation, Artificial Intelligence, and Workforce Reskilling"
     },
     {
       name: 'Social, Humanitarian and Cultural Committee',
       shortName: 'SOCHUM',
       logo: SochumGold,
       bg: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Combating Human Trafficking and Protecting Vulnerable Communities During Humanitarian Crises'
+      agenda: 'Human Rights Implications of Mass Digital Surveillance'
     },
     {
       name: 'UN Environment Programme',
       shortName: 'UNEP',
       logo: UnepGold,
       bg: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Addressing Climate Change Through Global Carbon Reduction and Climate Adaptation Strategies'
+      agenda: 'Deep-Sea Mining and Environmental Protection'
     },
     {
       name: 'Crisis Committee',
       shortName: 'Crisis',
       logo: CrisisGold,
       bg: 'https://images.unsplash.com/photo-1461088945293-0c17689e48ac?auto=format&fit=crop&q=80&w=400',
-      agenda: 'Escalation of the Middle East Conflict: Managing Regional Security, Diplomacy, and Humanitarian Response'
+      agenda: 'Operation Midnight Hammer: Assessing the Legality, Strategic implications, and Impact on International Peace and Security'
     },
     {
       name: 'United States Senate',
       shortName: 'US SENATE',
       logo: SenateGold,
       bg: 'https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&q=80&w=400',
-      agenda: 'United States Foreign Policy in the Indo-Pacific: National Security, Trade, and Strategic Alliances'
+      agenda: 'Continuation of Military Aid to Ukraine'
     },
     {
       name: 'Lok Sabha',
       shortName: 'LOK SABHA',
       logo: LoksabhaGold,
       bg: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Inside_view_of_Lok_Sabha_chamber_in_New_Parliament_building.jpg',
-      agenda: 'One Nation, One Election: Evaluating Constitutional, Political, and Administrative Implications'
+      agenda: 'Discussion on the Conduct of the National Census with Special Emphasis on Data Accuracy, Delimitation, and Inclusive Governance'
     },
     {
       name: 'International Press Plenary',
