@@ -1684,7 +1684,26 @@ const RegistrationForm = () => {
       alert('✅ Master Excel exported successfully from server!');
     } catch (err) {
       console.error('Failed to export Master Excel:', err);
-      alert('❌ Failed to download master Excel sheet. Admin authentication required.');
+      // When responseType is 'blob', error responses are also blobs — parse them to get the real message
+      let errorMessage = 'Failed to download master Excel sheet.';
+      if (err.response?.data instanceof Blob) {
+        try {
+          const text = await err.response.data.text();
+          const json = JSON.parse(text);
+          errorMessage = json.message || errorMessage;
+        } catch (parseErr) {
+          // Blob wasn't JSON, keep default message
+        }
+      } else if (err.response?.data?.message) {
+        errorMessage = err.response.data.message;
+      } else if (err.response?.status === 401) {
+        errorMessage = 'Session expired. Please sign out and sign in again.';
+      } else if (err.response?.status === 403) {
+        errorMessage = 'Admin access required. Please sign in with an admin account.';
+      } else if (!err.response) {
+        errorMessage = 'Network error — could not reach the server. Please check your connection.';
+      }
+      alert(`❌ ${errorMessage}`);
     }
   };
 
