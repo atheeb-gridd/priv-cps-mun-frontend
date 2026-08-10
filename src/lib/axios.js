@@ -17,7 +17,7 @@ const API_BASE_URL = isLocalHost
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
-  timeout: 30000, // 30s — allows more time for Vercel cold starts and slow responses
+  timeout: 15000, // 15s — prevents indefinite hangs during Vercel cold starts
   headers: {
     'Content-Type': 'application/json',
   },
@@ -33,16 +33,7 @@ apiClient.interceptors.request.use(
     return config;
   },
   (error) => {
-    // Simple retry logic: retry once for network errors or timeouts
-    const config = error.config;
-    if (!config || config.__retryCount >= 1) {
-      return Promise.reject(error);
-    }
-    config.__retryCount = (config.__retryCount || 0) + 1;
-    // Optionally add a small delay before retrying
-    return new Promise((resolve) => setTimeout(() => resolve(apiClient(config)), 1000));
-  },
-
+    return Promise.reject(error);
   }
 );
 
