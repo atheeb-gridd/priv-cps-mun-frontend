@@ -158,7 +158,7 @@ const Home = () => {
       shortName: 'UNHRC',
       canonicalName: 'UN Human Rights Council (UNHRC)',
       limit: 40,
-      agenda: 'Addressing Human Rights Violations in Conflict Zones with Special Emphasis on Myanmar',
+      agenda: 'Addressing the Rohingya Refugee Crisis with Special Emphasis on Accountability, Safe Repatriation, and the Protection of Human Rights',
       logo: UnhrcGold,
       bg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400',
       capacity: '40 max'
@@ -168,7 +168,7 @@ const Home = () => {
       shortName: 'UNGA',
       canonicalName: 'UN General Assembly (UNGA)',
       limit: 60,
-      agenda: 'Strengthening Global Cooperation for Sustainable Development and International Peace',
+      agenda: 'Reforming International Sanctions while Preventing the Misuse of Unilateral Coercive Measures',
       logo: UngaGold,
       bg: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=400',
       capacity: '60 max'
@@ -178,7 +178,7 @@ const Home = () => {
       shortName: 'UNSC',
       canonicalName: 'UN Security Council (UNSC) (Double delegation)',
       limit: 40,
-      agenda: 'Deliberation on the Red Sea Crisis: Ensuring Maritime Security and Regional Stability',
+      agenda: 'Protection of International Shipping in the Red Sea',
       logo: UnscGold,
       bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400',
       capacity: '40 max'
@@ -188,7 +188,7 @@ const Home = () => {
       shortName: 'LOKSABHA',
       canonicalName: 'Lok Sabha',
       limit: 40,
-      agenda: 'One Nation, One Election: Evaluating Constitutional, Political, and Administrative Implications',
+      agenda: 'Discussion on the Conduct of the National Census with Special Emphasis on Data Accuracy, Delimitation, and Inclusive Governance',
       logo: LoksabhaGold,
       bg: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Inside_view_of_Lok_Sabha_chamber_in_New_Parliament_building.jpg',
       capacity: '40 max'
@@ -198,7 +198,7 @@ const Home = () => {
       shortName: 'Crisis committee',
       canonicalName: 'Crisis Committee',
       limit: 30,
-      agenda: 'Escalation of the Middle East Conflict: Managing Regional Security, Diplomacy, and Humanitarian Response',
+      agenda: 'Operation Midnight Hammer: Assessing the legality, Strategic implication, and impact on international Peace and Security',
       logo: CrisisGold,
       bg: 'https://images.unsplash.com/photo-1461088945293-0c17689e48ac?auto=format&fit=crop&q=80&w=400',
       capacity: '30 max'
