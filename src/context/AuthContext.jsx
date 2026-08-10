@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
       return;
     }
     try {
-      const { data } = await apiClient.get('/auth/me');
+      const { data } = await apiClient.get('/auth/me', { timeout: 30000 }); // extra time for Vercel cold starts
       setUser(data.user);
     } catch (error) {
       // Only clear session if the server explicitly rejected the token (401).
@@ -55,9 +55,11 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem('refreshToken');
         setUser(null);
       } else {
-        console.warn('Session check failed transiently, keeping session:', error.message);
-        // Keep the user's local state intact — they are still "logged in" locally
-        // and the next API call will re-validate if needed.
+        // Transient error (timeout / network / 5xx) — keep local session intact.
+        // Only log in dev so the production console stays clean.
+        if (process.env.NODE_ENV !== 'production') {
+          console.warn('Session check failed transiently, keeping session:', error.message);
+        }
       }
     } finally {
       setLoading(false);
