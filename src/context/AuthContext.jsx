@@ -42,7 +42,7 @@ export const AuthProvider = ({ children }) => {
       return;
     }
     try {
-      const { data } = await apiClient.get('/auth/me', { timeout: 30000 }); // extra time for Vercel cold starts
+      const { data } = await apiClient.get('/auth/me', { timeout: 50000 }); // extra time for Vercel cold starts
       setUser(data.user);
     } catch (error) {
       // Only clear session if the server explicitly rejected the token (401).
