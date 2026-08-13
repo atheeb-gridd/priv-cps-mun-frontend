@@ -995,10 +995,30 @@ const RegistrationForm = () => {
     
     setSaveStatus('saving');
     try {
+      // Strip heavy file buffers / base64 objects from draft payload to prevent database bloat
+      const sanitizedFormData = { ...formDataToSave };
+      delete sanitizedFormData.docStudentIdFile;
+      delete sanitizedFormData.docPhotoFile;
+      delete sanitizedFormData.docStudentIdBase64;
+      delete sanitizedFormData.docPhotoBase64;
+      delete sanitizedFormData.docAadharBase64;
+
+      if (Array.isArray(sanitizedFormData.delegates)) {
+        sanitizedFormData.delegates = sanitizedFormData.delegates.map(d => {
+          const cleanD = { ...d };
+          delete cleanD.docStudentIdFile;
+          delete cleanD.docPhotoFile;
+          delete cleanD.docStudentIdBase64;
+          delete cleanD.docPhotoBase64;
+          delete cleanD.docAadharBase64;
+          return cleanD;
+        });
+      }
+
       const res = await apiClient.post('/registration/draft', {
         currentStep: stepToSave,
         regType: regTypeToSave,
-        formData: formDataToSave
+        formData: sanitizedFormData
       });
       setSaveStatus('saved');
       const timeStr = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
