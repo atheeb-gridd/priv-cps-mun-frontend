@@ -217,7 +217,7 @@ const Committees = () => {
     const interval = setInterval(() => {
       fetchCounts();
       fetchAllocations();
-    }, 4000);
+    }, 30000);
 
     return () => clearInterval(interval);
   }, []);
