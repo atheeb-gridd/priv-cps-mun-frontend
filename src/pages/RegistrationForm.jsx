@@ -1055,7 +1055,7 @@ const RegistrationForm = () => {
       const interval = setInterval(() => {
         fetchAllRegistrations();
         fetchUserCredentials();
-      }, 4000);
+      }, 30000);
 
       return () => clearInterval(interval);
     } else {
