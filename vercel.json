@@ -9,7 +9,11 @@
       "destination": "https://priv-cps-mun-backend.vercel.app/api/:path*"
     },
     {
-      "source": "/((?!api/).*)",
+      "source": "/uploads/:path*",
+      "destination": "https://priv-cps-mun-backend.vercel.app/uploads/:path*"
+    },
+    {
+      "source": "/((?!api/|uploads/).*)",
       "destination": "/index.html"
     }
   ]
