@@ -17,7 +17,7 @@ const API_BASE_URL = isLocalHost
 
 const apiClient = axios.create({
   baseURL: `${API_BASE_URL}/api`,
-  timeout: 30000, // 30s — allow sufficient time for Vercel serverless cold starts & MongoDB queries
+  timeout: 60000, // 60s — matches Vercel serverless maxDuration (60s) for cold start resilience
   headers: {
     'Content-Type': 'application/json',
   },
