@@ -81,6 +81,9 @@ export const AuthProvider = ({ children }) => {
       setUser(data.user);
       return data.user;
     } catch (error) {
+      if (error.code === 'ECONNABORTED' || error.message?.includes('timeout') || error.message?.includes('Network Error')) {
+        throw 'The server is warming up or connecting to the database. Please try logging in again in a few seconds.';
+      }
       throw error.response?.data?.message || 'Login failed. Please try again.';
     } finally {
       setLoading(false);
