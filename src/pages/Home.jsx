@@ -135,8 +135,7 @@ const Home = () => {
         navigate('/agendas');
         break;
       case 2:
-        triggerToast("The background guides will be revealed on 10th of August.");
-        setPendingPath('/backgroundguides');
+        navigate('/backgroundguides');
         break;
       case 3:
         triggerToast("Register now to know your country!");
