@@ -6766,7 +6766,7 @@ const RegistrationForm = () => {
                                   </div>
                                 </div>
                                 <div className="text-[#D4D4D4] text-[10px] leading-relaxed px-1 flex items-center justify-between gap-2 border-t border-[#DCA843]/10 pt-3">
-                                  <span>Study guides will be revealed on 10th August 2026.</span>
+                                  <span>Official study guides & background guides are now available.</span>
                                   <button 
                                     onClick={() => navigate(`/backgroundguides?committee=${encodeURIComponent(comm)}`)}
                                     className="text-[10px] bg-[#DCA843] text-black font-cinzel font-bold px-3.5 py-1.5 rounded hover:bg-[#FFE082] transition-colors uppercase tracking-wider cursor-pointer shadow flex items-center gap-1"
