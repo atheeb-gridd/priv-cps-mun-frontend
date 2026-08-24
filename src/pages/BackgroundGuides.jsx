@@ -24,63 +24,63 @@ const BackgroundGuides = () => {
       shortName: 'UNHRC',
       logo: UnhrcGold,
       bg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1LS7He6Pg58fJBjbhCKGbDkVRnvpjkOZP'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1LS7He6Pg58fJBjbhCKGbDkVRnvpjkOZP'
     },
     {
       name: 'UN General Assembly',
       shortName: 'UNGA',
       logo: UngaGold,
       bg: 'https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1343XVJtNIh9PUZ0hd_1NiYpmR81YR6qz'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1343XVJtNIh9PUZ0hd_1NiYpmR81YR6qz'
     },
     {
       name: 'UN Security Council (Double delegation)',
       shortName: 'UNSC',
       logo: UnscGold,
       bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1njUAUP82sE6xQMJGDdmFmTBaRv-c_cA0'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1njUAUP82sE6xQMJGDdmFmTBaRv-c_cA0'
     },
     {
       name: 'Economic and Social Council',
       shortName: 'ECOSOC',
       logo: EcosocGold,
       bg: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1gGHgOnmA6ZPlxcdP4eJey9J_YATLP3tU'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1gGHgOnmA6ZPlxcdP4eJey9J_YATLP3tU'
     },
     {
       name: 'International Labour Organization',
       shortName: 'ILO',
       logo: IloGold,
       bg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/10s1ACJVItIDLeBivKEfNn1VF5bIPxhar'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=10s1ACJVItIDLeBivKEfNn1VF5bIPxhar'
     },
     {
       name: 'Social, Humanitarian and Cultural Committee',
       shortName: 'SOCHUM',
       logo: SochumGold,
       bg: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1I75zSdgkN5H0V_MlHFVCE4eULDnRK7dS'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1I75zSdgkN5H0V_MlHFVCE4eULDnRK7dS'
     },
     {
       name: 'UN Environment Programme',
       shortName: 'UNEP',
       logo: UnepGold,
       bg: 'https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1IfCtGd6pGt6TlPjnufK_BSlNWi1Dkx1f'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1IfCtGd6pGt6TlPjnufK_BSlNWi1Dkx1f'
     },
     {
       name: 'International Press Plenary',
       shortName: 'IPP',
       logo: IppGold,
       bg: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1vAC05Amu3enWFwfNYj4d2TjrpAUUuOoI'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1vAC05Amu3enWFwfNYj4d2TjrpAUUuOoI'
     },
     {
       name: 'International Press Journal',
       shortName: 'IPJ',
       logo: IpjGold,
       bg: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1skVpQQt-HtDqOQuOKyQaH50DRyaHxNzK'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1skVpQQt-HtDqOQuOKyQaH50DRyaHxNzK'
     },
     {
       name: 'United States Senate',
@@ -94,14 +94,14 @@ const BackgroundGuides = () => {
       shortName: 'LOKSABHA',
       logo: LoksabhaGold,
       bg: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Inside_view_of_Lok_Sabha_chamber_in_New_Parliament_building.jpg',
-      pdfUrl: 'https://drive.google.com/file/d/13b624VX1CoijP6ko785LMldguRmzF5X5'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=13b624VX1CoijP6ko785LMldguRmzF5X5'
     },
     {
       name: 'Crisis Committee',
       shortName: 'Crisis committee',
       logo: CrisisGold,
       bg: 'https://images.unsplash.com/photo-1461088945293-0c17689e48ac?auto=format&fit=crop&q=80&w=400',
-      pdfUrl: 'https://drive.google.com/file/d/1WRp_1cJrLP7efU3XtS4j0iYARTTfZtv7'
+      pdfUrl: 'https://drive.google.com/uc?export=download&id=1WRp_1cJrLP7efU3XtS4j0iYARTTfZtv7'
     }
   ];
 
