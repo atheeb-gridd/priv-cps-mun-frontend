@@ -417,14 +417,12 @@ const OCMembers = () => {
 
             <div className="flex flex-wrap justify-center gap-6 w-full">
               {[
-                { name: "Ms. Aadhira Sekar", role: "Core Team — Delegate Affairs", img: "/images/aadhira.jpg", objectPosition: "center 15%", transform: "scale(1.4) translateY(6%)" },
                 { name: "Ms. G. Vidhulaa", role: "Core Team — Craft & Design", img: "/images/vidhulaa.jpg", objectPosition: "center 8%", transform: "scale(1.55) translateY(-2%)" },
                 { name: "Mr. Harshith Sai", role: "Core Team — Delegate Affairs", img: "/images/harshith_sai.jpg", objectPosition: "center 15%", transform: "scale(1.45) translateY(6%)" },
                 { name: "Mr. Prabhakaran", role: "Core Team — Social Media Handling", img: "/images/prabhakaran.jpg", objectPosition: "center 15%", transform: "scale(1.4) translateY(6%)" },
                 { name: "Mr. Sai Harish", role: "Core Team — Finance", img: "/images/sai_harish.jpg", objectPosition: "center 15%" },
                 { name: "Mr. Saiyam S", role: "Core Team — Public Relations", img: "/images/saiyam.jpg", objectPosition: "center 15%", transform: "scale(1.6) translateY(-10%)" },
-                { name: "Mr. Shravan", role: "Core Team — Media & Design", img: "/images/shravan.jpg", objectPosition: "center 15%", transform: "scale(1.6) translateY(-10%)" },
-                { name: "Ms. Sushikka Jagarlamudi", role: "Core Team — Logistics", img: "/images/sushikka.jpg", objectPosition: "center 15%", transform: "scale(1.4) translateY(6%)" }
+                { name: "Mr. Shravan", role: "Core Team — Media & Design", img: "/images/shravan.jpg", objectPosition: "center 15%", transform: "scale(1.6) translateY(-10%)" }
               ].map((member, idx) => (
                 <div 
                   key={idx} 
