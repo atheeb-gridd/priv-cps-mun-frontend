@@ -2142,8 +2142,8 @@ const RegistrationForm = () => {
     const count = parseInt(formData.schoolNumDelegates, 10);
     if (!formData.schoolNumDelegates || isNaN(count) || count <= 0) {
       errs.schoolNumDelegates = 'Please enter a valid number of delegates';
-    } else if (count > 20) {
-      errs.schoolNumDelegates = 'Maximum delegation size is 20';
+    } else if (count > 30) {
+      errs.schoolNumDelegates = 'Maximum delegation size is 30';
     }
 
     setErrors(errs);
@@ -6942,11 +6942,11 @@ const RegistrationForm = () => {
                       <input 
                         type="number"
                         min="1"
-                        max="20"
+                        max="30"
                         value={formData.schoolNumDelegates}
                         onChange={(e) => setFormData({...formData, schoolNumDelegates: e.target.value})}
                         className="w-full bg-[#121214]/65 border border-[#DCA843]/40 rounded p-3 text-sm focus:outline-none focus:border-[#DCA843] focus:ring-1 focus:ring-[#DCA843] text-[#DCA843] font-bold"
-                        placeholder="Enter delegation size (Max 20)"
+                        placeholder="Enter delegation size (Max 30)"
                       />
                       {errors.schoolNumDelegates && <p className="text-[10px] text-red-500 mt-1">{errors.schoolNumDelegates}</p>}
                     </div>
