@@ -60,8 +60,8 @@ const COMMITTEE_LIMITS = {
   'International Labour Organization (ILO)': 20,
   'Social, Humanitarian and Cultural Committee (SOCHUM)': 40,
   'UN Environment Programme (UNEP)': 40,
-  'International Press Plenary (IPP)': 30,
-  'International Press Journalism (IPJ)': 30,
+  'International Press Plenary (IPP)': 20,
+  'International Press Journalism (IPJ)': 20,
   'United States Senate (US SENATE)': 40,
   'Lok Sabha': 40,
   'Crisis Committee': 20
