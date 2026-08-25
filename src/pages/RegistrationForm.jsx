@@ -48,6 +48,10 @@ const COMMITTEES = [
   'Crisis Committee'
 ];
 
+const CLOSED_COMMITTEES = [
+  'United States Senate (US SENATE)'
+];
+
 const COMMITTEE_LIMITS = {
   'UN Human Rights Council (UNHRC)': 40,
   'UN General Assembly (UNGA)': 60,
@@ -731,11 +735,13 @@ const RegistrationForm = () => {
       const formCount = formCounts[c] || 0;
       const totalCount = dbCount + formCount;
       const limit = COMMITTEE_LIMITS[c] || 30;
+      const isClosed = CLOSED_COMMITTEES.includes(c);
       return {
         name: c,
         filled: totalCount,
         limit: limit,
-        isFull: totalCount >= limit
+        isClosed: isClosed,
+        isFull: isClosed || totalCount >= limit
       };
     });
   };
@@ -6368,7 +6374,10 @@ const RegistrationForm = () => {
                         }
                         const avail = getAvailableCommittees().find(c => c.name === val);
                         if (avail && avail.isFull) {
-                          toast.error(`Registrations for ${val} are FULL. Please select another committee with available seats.`);
+                          toast.error(avail.isClosed 
+                            ? `Registrations for ${val} are CLOSED. Please select another committee with available seats.`
+                            : `Registrations for ${val} are FULL. Please select another committee with available seats.`
+                          );
                           return;
                         }
                         setFormData({
@@ -6386,7 +6395,7 @@ const RegistrationForm = () => {
                           value={avail.name}
                           disabled={avail.isFull && formData.selectedCommittee !== avail.name}
                         >
-                          {avail.name} {(avail.name.includes('UNSC') || avail.name.includes('Security Council')) ? '(Allocations will be done randomly)' : ''} ({Math.max(0, avail.limit - avail.filled)} left) {avail.isFull ? '(FULL)' : ''}
+                          {avail.name} {(avail.name.includes('UNSC') || avail.name.includes('Security Council')) ? '(Allocations will be done randomly)' : ''} ({Math.max(0, avail.limit - avail.filled)} left) {avail.isClosed ? '(CLOSED)' : (avail.isFull ? '(FULL)' : '')}
                         </option>
                       ))}
                     </select>
@@ -7424,7 +7433,7 @@ const RegistrationForm = () => {
                                         value={avail.name}
                                         disabled={avail.isFull && del.selectedCommittee !== avail.name}
                                       >
-                                        {avail.name} {(avail.name.includes('UNSC') || avail.name.includes('Security Council')) ? '(Allocations will be done randomly)' : ''} ({Math.max(0, avail.limit - avail.filled)} left) {avail.isFull && del.selectedCommittee !== avail.name ? '(FULL)' : ''}
+                                        {avail.name} {(avail.name.includes('UNSC') || avail.name.includes('Security Council')) ? '(Allocations will be done randomly)' : ''} ({Math.max(0, avail.limit - avail.filled)} left) {avail.isClosed ? '(CLOSED)' : (avail.isFull && del.selectedCommittee !== avail.name ? '(FULL)' : '')}
                                       </option>
                                     ))}
                                   </select>
