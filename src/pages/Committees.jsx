@@ -235,8 +235,8 @@ const Committees = () => {
       agenda: 'Addressing the Rohingya Refugee Crisis with Special Emphasis on Accountability, Safe Repatriation, and the Protection of Human Rights',
       logo: UnhrcGold,
       bg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400',
-      capacity: '40 max',
-      limit: 40
+      capacity: '37 max',
+      limit: 37
     },
     {
       name: 'UN General Assembly',
@@ -265,8 +265,8 @@ const Committees = () => {
       agenda: 'Promoting the Responsible Development and Use of Artificial Intelligence for Sustainable Economic and Social Development',
       logo: EcosocGold,
       bg: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400',
-      capacity: '40 max',
-      limit: 40
+      capacity: '25 max',
+      limit: 25
     },
     {
       name: 'International Labour Organization',
@@ -275,8 +275,8 @@ const Committees = () => {
       agenda: "Addressing the Future of Work with Special Emphasis on Automation, Artificial Intelligence, and Workforce Reskilling",
       logo: IloGold,
       bg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400',
-      capacity: '30 max',
-      limit: 30
+      capacity: '20 max',
+      limit: 20
     },
     {
       name: 'Social, Humanitarian and Cultural Committee',
@@ -345,8 +345,8 @@ const Committees = () => {
       agenda: 'Operation Midnight Hammer: Assessing the legality, Strategic implication, and impact on international Peace and Security',
       logo: CrisisGold,
       bg: 'https://images.unsplash.com/photo-1461088945293-0c17689e48ac?auto=format&fit=crop&q=80&w=400',
-      capacity: '30 max',
-      limit: 30
+      capacity: '20 max',
+      limit: 20
     }
   ];
 
