@@ -13,6 +13,11 @@ import IpjGold from '../assets/ipj_gold.png';
 import IloGold from '../assets/ilo_gold.png';
 import SenateGold from '../assets/senate_gold.png';
 
+const CLOSED_COMMITTEES = [
+  'United States Senate (US SENATE)',
+  'US SENATE'
+];
+
 const COMMITTEE_COUNTRY_POOL = {
   'Crisis Committee': [
     'United States of America', 'Iran', 'Israel', 'Russian Federation', 'China',
@@ -385,6 +390,13 @@ const Committees = () => {
             {/* Gold border decorative line top */}
             <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-[#DCA843]/40 to-transparent"></div>
 
+            {/* Closed Committee Badge */}
+            {CLOSED_COMMITTEES.includes(committee.canonicalName) && (
+              <div className="absolute top-3 right-3 bg-red-500/20 border border-red-500/50 text-red-400 text-[9px] font-cinzel font-bold px-2 py-0.5 rounded tracking-widest uppercase shadow-sm">
+                Closed
+              </div>
+            )}
+
             {/* Committee Emblem */}
             <div className="w-20 h-20 rounded-full border border-[#DCA843]/30 bg-[#000]/80 p-1.5 flex items-center justify-center mb-5 group-hover:border-[#DCA843]/60 transition-colors">
               <img 
@@ -421,18 +433,19 @@ const Committees = () => {
                   <span className="text-[10px] font-bold font-allotrix-font-secondary" style={{ color: '#ffffff' }}>{committee.capacity}</span>
                 </div>
                 {(() => {
+                  const isClosed = CLOSED_COMMITTEES.includes(committee.canonicalName);
                   const filled = seatCounts[committee.canonicalName] || 0;
                   const limit = committee.limit || 30;
-                  const seatsLeft = Math.max(0, limit - filled);
+                  const seatsLeft = isClosed ? 0 : Math.max(0, limit - filled);
                   return (
                     <div className={`flex justify-center items-center gap-1.5 border rounded py-1 px-3 w-fit mx-auto ${
-                      seatsLeft === 0 
+                      isClosed || seatsLeft === 0 
                         ? 'bg-red-500/10 border-red-500/35 text-red-400' 
                         : 'bg-green-500/5 border-green-500/20 text-green-400'
                     }`}>
-                      <span className="text-[9px] uppercase font-cinzel font-bold tracking-wider">Seats Left:</span>
+                      <span className="text-[9px] uppercase font-cinzel font-bold tracking-wider">Status:</span>
                       <span className="text-[10px] font-bold font-allotrix-font-secondary text-white">
-                        {seatsLeft === 0 ? '0 (Full)' : seatsLeft}
+                        {isClosed ? 'Closed' : (seatsLeft === 0 ? 'Full' : `${seatsLeft} Left`)}
                       </span>
                     </div>
                   );
