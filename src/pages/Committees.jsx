@@ -249,14 +249,14 @@ const Committees = () => {
       limit: 60
     },
     {
-      name: 'UN Security Council (Double delegation)',
+      name: 'UN Security Council',
       shortName: 'UNSC',
       canonicalName: 'UN Security Council (UNSC) (Double delegation)',
       agenda: 'Protection of International Shipping in the Red Sea',
       logo: UnscGold,
       bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400',
-      capacity: '40 max',
-      limit: 40
+      capacity: '20 max',
+      limit: 20
     },
     {
       name: 'Economic and Social Council',
@@ -462,7 +462,6 @@ const Committees = () => {
       {selectedCommittee && (() => {
         const committeeName = selectedCommittee.canonicalName;
         const pool = COMMITTEE_COUNTRY_POOL[committeeName] || [];
-        const isUNSC = committeeName.toLowerCase().includes('unsc') || committeeName.toLowerCase().includes('security council');
 
         // Normalize committee name check
         const normCanonical = committeeName.toLowerCase();
@@ -478,30 +477,16 @@ const Committees = () => {
           if (!s) return true;
 
           const countryMatch = country.toLowerCase().includes(s);
-          
-          if (isUNSC) {
-            const countryDels = committeeAllocations.filter(a => a.country === country);
-            const del1Match = countryDels[0] && (
-              countryDels[0].delegateName.toLowerCase().includes(s) || 
-              countryDels[0].schoolName.toLowerCase().includes(s)
-            );
-            const del2Match = countryDels[1] && (
-              countryDels[1].delegateName.toLowerCase().includes(s) || 
-              countryDels[1].schoolName.toLowerCase().includes(s)
-            );
-            return countryMatch || del1Match || del2Match;
-          } else {
-            const del = committeeAllocations.find(a => a.country && a.country.toLowerCase() === country.toLowerCase());
-            const delMatch = del && (
-              del.delegateName.toLowerCase().includes(s) || 
-              del.schoolName.toLowerCase().includes(s)
-            );
-            return countryMatch || delMatch;
-          }
+          const del = committeeAllocations.find(a => a.country && a.country.toLowerCase() === country.toLowerCase());
+          const delMatch = del && (
+            del.delegateName.toLowerCase().includes(s) || 
+            del.schoolName.toLowerCase().includes(s)
+          );
+          return countryMatch || delMatch;
         });
 
         // Occupancy calculation
-        const totalLimit = isUNSC ? 40 : pool.length;
+        const totalLimit = selectedCommittee.limit || pool.length;
         const filledSeats = committeeAllocations.length;
 
         return (
@@ -580,107 +565,37 @@ const Committees = () => {
                     </thead>
                     <tbody className="divide-y divide-[#DCA843]/5 text-[#BABABA]">
                       {filteredPool.map((country, idx) => {
-                        if (isUNSC) {
-                          const countryDels = committeeAllocations.filter(a => a.country === country);
-                          const seat1 = countryDels[0];
-                          const seat2 = countryDels[1];
-
-                          return (
-                            <React.Fragment key={idx}>
-                              {/* Seat 1 */}
-                              <tr className="hover:bg-white/5">
-                                <td className="p-2.5 font-semibold text-white">
-                                  {country} <span className="text-[9px] text-[#DCA843]/60 uppercase ml-1">(Seat 1)</span>
-                                </td>
-                                <td className="p-2.5">
-                                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                    seat1 
-                                      ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400' 
-                                      : 'bg-red-500/10 border border-red-500/20 text-rose-400'
-                                  }`}>
-                                    {seat1 ? 'Allocated' : 'Vacant'}
-                                  </span>
-                                </td>
-                                <td className="p-2.5 font-medium text-white/80">
-                                  {seat1 ? seat1.delegateName : '—'}
-                                </td>
-                                <td className="p-2.5 text-[10px]">
-                                  {seat1 ? (
-                                    <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                      seat1.registrationType === 'Individual'
-                                        ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
-                                        : 'bg-purple-500/10 border border-purple-500/20 text-purple-300'
-                                    }`}>
-                                      {seat1.registrationType || 'Individual'}
-                                    </span>
-                                  ) : '—'}
-                                </td>
-                              </tr>
-                              
-                              {/* Seat 2 */}
-                              <tr className="hover:bg-white/5 border-b border-white/5">
-                                <td className="p-2.5 font-semibold text-white pl-5">
-                                  ↳ <span className="text-[9px] text-[#DCA843]/60 uppercase ml-1">(Seat 2)</span>
-                                </td>
-                                <td className="p-2.5">
-                                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                    seat2 
-                                      ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400' 
-                                      : 'bg-red-500/10 border border-red-500/20 text-rose-400'
-                                  }`}>
-                                    {seat2 ? 'Allocated' : 'Vacant'}
-                                  </span>
-                                </td>
-                                <td className="p-2.5 font-medium text-white/80">
-                                  {seat2 ? seat2.delegateName : '—'}
-                                </td>
-                                <td className="p-2.5 text-[10px]">
-                                  {seat2 ? (
-                                    <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                      seat2.registrationType === 'Individual'
-                                        ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
-                                        : 'bg-purple-500/10 border border-purple-500/20 text-purple-300'
-                                    }`}>
-                                      {seat2.registrationType || 'Individual'}
-                                    </span>
-                                  ) : '—'}
-                                </td>
-                              </tr>
-                            </React.Fragment>
-                          );
-                        } else {
-                          const del = committeeAllocations.find(a => a.country && a.country.toLowerCase() === country.toLowerCase());
-                          return (
-                            <tr key={idx} className="hover:bg-white/5">
-                              <td className="p-2.5 font-semibold text-white">
-                                {country}
-                              </td>
-                              <td className="p-2.5">
+                        const del = committeeAllocations.find(a => a.country && a.country.toLowerCase() === country.toLowerCase());
+                        return (
+                          <tr key={idx} className="hover:bg-white/5">
+                            <td className="p-2.5 font-semibold text-white">
+                              {country}
+                            </td>
+                            <td className="p-2.5">
+                              <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
+                                del 
+                                  ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400' 
+                                  : 'bg-red-500/10 border border-red-500/20 text-rose-400'
+                              }`}>
+                                {del ? 'Allocated' : 'Vacant'}
+                              </span>
+                            </td>
+                            <td className="p-2.5 font-medium text-white/80">
+                              {del ? del.delegateName : '—'}
+                            </td>
+                            <td className="p-2.5 text-[10px]">
+                              {del ? (
                                 <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                  del 
-                                    ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400' 
-                                    : 'bg-red-500/10 border border-red-500/20 text-rose-400'
+                                  del.registrationType === 'Individual'
+                                    ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
+                                    : 'bg-purple-500/10 border border-purple-500/20 text-purple-300'
                                 }`}>
-                                  {del ? 'Allocated' : 'Vacant'}
+                                  {del.registrationType || 'Individual'}
                                 </span>
-                              </td>
-                              <td className="p-2.5 font-medium text-white/80">
-                                {del ? del.delegateName : '—'}
-                              </td>
-                              <td className="p-2.5 text-[10px]">
-                                {del ? (
-                                  <span className={`px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider ${
-                                    del.registrationType === 'Individual'
-                                      ? 'bg-blue-500/10 border border-blue-500/20 text-blue-300'
-                                      : 'bg-purple-500/10 border border-purple-500/20 text-purple-300'
-                                  }`}>
-                                    {del.registrationType || 'Individual'}
-                                  </span>
-                                ) : '—'}
-                              </td>
-                            </tr>
-                          );
-                        }
+                              ) : '—'}
+                            </td>
+                          </tr>
+                        );
                       })}
                     </tbody>
                   </table>
