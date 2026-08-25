@@ -305,8 +305,8 @@ const Committees = () => {
       agenda: '',
       logo: IppGold,
       bg: 'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&q=80&w=400',
-      capacity: '30 max',
-      limit: 30
+      capacity: '20 max',
+      limit: 20
     },
     {
       name: 'International Press Journalism',
@@ -315,8 +315,8 @@ const Committees = () => {
       agenda: '',
       logo: IpjGold,
       bg: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=400',
-      capacity: '30 max',
-      limit: 30
+      capacity: '20 max',
+      limit: 20
     },
     {
       name: 'United States Senate',
