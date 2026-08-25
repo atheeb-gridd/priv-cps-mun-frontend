@@ -53,18 +53,18 @@ const CLOSED_COMMITTEES = [
 ];
 
 const COMMITTEE_LIMITS = {
-  'UN Human Rights Council (UNHRC)': 40,
+  'UN Human Rights Council (UNHRC)': 37,
   'UN General Assembly (UNGA)': 60,
   'UN Security Council (UNSC) (Double delegation)': 20,
-  'Economic and Social Council (ECOSOC)': 40,
-  'International Labour Organization (ILO)': 30,
+  'Economic and Social Council (ECOSOC)': 25,
+  'International Labour Organization (ILO)': 20,
   'Social, Humanitarian and Cultural Committee (SOCHUM)': 40,
   'UN Environment Programme (UNEP)': 40,
   'International Press Plenary (IPP)': 30,
   'International Press Journalism (IPJ)': 30,
   'United States Senate (US SENATE)': 40,
   'Lok Sabha': 40,
-  'Crisis Committee': 30
+  'Crisis Committee': 20
 };
 const COMMITTEE_COUNTRIES = {
   'UN Human Rights Council (UNHRC)': [
