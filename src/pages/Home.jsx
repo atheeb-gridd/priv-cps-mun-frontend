@@ -32,7 +32,7 @@ import UngaGold from '../assets/unga_gold.png';
 import UnscGold from '../assets/unsc_gold.png';
 import LoksabhaGold from '../assets/loksabha_gold.png';
 import CrisisGold from '../assets/crisis_gold.png';
-// import Client1 from '../assets/client1.png';
+import Sponsor1 from '../assets/SPONSORS LOGOS1.png';
 // import Client2 from '../assets/client2.png';
 // import Client3 from '../assets/client3.png';
 // import Client4 from '../assets/client4.png';
@@ -266,6 +266,7 @@ const Home = () => {
   ];
 
   const sponsorLogos = [
+    Sponsor1,
     // Add new sponsor image variables here when available
   ];
 
