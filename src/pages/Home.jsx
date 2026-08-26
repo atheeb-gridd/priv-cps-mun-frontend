@@ -1072,7 +1072,7 @@ const Home = () => {
                 key={idx} 
                 src={logo} 
                 alt={`Sponsor Logo ${idx + 1}`} 
-                className="h-10 md:h-12 object-contain grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300" 
+                className="h-16 md:h-20 lg:h-24 max-w-[180px] md:max-w-[220px] object-contain hover:scale-105 transition-all duration-300" 
               />
             ))}
           </div>
