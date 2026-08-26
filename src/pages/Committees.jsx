@@ -265,8 +265,8 @@ const Committees = () => {
       agenda: 'Promoting the Responsible Development and Use of Artificial Intelligence for Sustainable Economic and Social Development',
       logo: EcosocGold,
       bg: 'https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&q=80&w=400',
-      capacity: '25 max',
-      limit: 25
+      capacity: '30 max',
+      limit: 30
     },
     {
       name: 'International Labour Organization',
@@ -275,8 +275,8 @@ const Committees = () => {
       agenda: "Addressing the Future of Work with Special Emphasis on Automation, Artificial Intelligence, and Workforce Reskilling",
       logo: IloGold,
       bg: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=400',
-      capacity: '20 max',
-      limit: 20
+      capacity: '25 max',
+      limit: 25
     },
     {
       name: 'Social, Humanitarian and Cultural Committee',
