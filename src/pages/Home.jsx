@@ -156,11 +156,11 @@ const Home = () => {
       name: 'UN Human Rights Council',
       shortName: 'UNHRC',
       canonicalName: 'UN Human Rights Council (UNHRC)',
-      limit: 40,
+      limit: 37,
       agenda: 'Addressing the Rohingya Refugee Crisis with Special Emphasis on Accountability, Safe Repatriation, and the Protection of Human Rights',
       logo: UnhrcGold,
       bg: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400',
-      capacity: '40 max'
+      capacity: '37 max'
     },
     {
       name: 'UN General Assembly',
@@ -176,11 +176,11 @@ const Home = () => {
       name: 'UN Security Council (Double delegation)',
       shortName: 'UNSC',
       canonicalName: 'UN Security Council (UNSC) (Double delegation)',
-      limit: 40,
+      limit: 20,
       agenda: 'Protection of International Shipping in the Red Sea',
       logo: UnscGold,
       bg: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=400',
-      capacity: '40 max'
+      capacity: '20 max'
     },
     {
       name: 'Lok Sabha',
@@ -196,11 +196,11 @@ const Home = () => {
       name: 'Crisis Committee',
       shortName: 'Crisis committee',
       canonicalName: 'Crisis Committee',
-      limit: 30,
+      limit: 20,
       agenda: 'Operation Midnight Hammer: Assessing the legality, Strategic implication, and impact on international Peace and Security',
       logo: CrisisGold,
       bg: 'https://images.unsplash.com/photo-1461088945293-0c17689e48ac?auto=format&fit=crop&q=80&w=400',
-      capacity: '30 max'
+      capacity: '20 max'
     }
   ];
 
