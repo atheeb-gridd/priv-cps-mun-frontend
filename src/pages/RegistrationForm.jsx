@@ -3573,7 +3573,7 @@ const RegistrationForm = () => {
                       )}
                     </div>
                     <span className="text-[11px] text-[#BABABA] block mt-1">
-                      📅 Early Bird: <strong className="text-white">₹750</strong> (till Aug 14) | Standard: <strong className="text-white">₹800</strong> (Aug 15–27) | Closure: <strong className="text-red-400">Aug 27, 10:00 AM IST</strong>
+                      📅 Early Bird: <strong className="text-white">₹750</strong> (till Aug 14) | Standard: <strong className="text-white">₹800</strong> (Aug 15–27) | Closure: <strong className="text-red-400">Aug 27, 10:00 PM IST</strong>
                     </span>
                   </div>
                 </div>
